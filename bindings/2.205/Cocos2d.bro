@@ -1385,15 +1385,15 @@ class cocos2d::extension::CCScale9Sprite {
 	virtual void setInsetRight(float);
 	virtual float getInsetBottom();
 	virtual void setInsetBottom(float);
-	virtual bool initWithBatchNode(cocos2d::CCSpriteBatchNode*, CCRect, bool, CCRect);
-	virtual bool initWithBatchNode(cocos2d::CCSpriteBatchNode*, CCRect, CCRect);
+	virtual bool initWithBatchNode(cocos2d::CCSpriteBatchNode*, cocos2d::CCRect, bool, cocos2d::CCRect);
+	virtual bool initWithBatchNode(cocos2d::CCSpriteBatchNode*, cocos2d::CCRect, cocos2d::CCRect);
 	virtual bool initWithFile(const char*, cocos2d::CCRect, cocos2d::CCRect) = ios 0x21e8f0;
 	virtual bool initWithFile(const char*, cocos2d::CCRect);
 	virtual bool initWithFile(cocos2d::CCRect, const char*);
 	virtual bool initWithFile(const char*);
 	virtual bool initWithSpriteFrame(cocos2d::CCSpriteFrame*, cocos2d::CCRect) = ios 0x21eb24;
 	virtual bool initWithSpriteFrame(cocos2d::CCSpriteFrame*);
-	virtual bool initWithSpriteFrameName(const char*, CCRect);
+	virtual bool initWithSpriteFrameName(const char*, cocos2d::CCRect);
 	virtual bool initWithSpriteFrameName(const char*);
 	virtual bool updateWithBatchNode(cocos2d::CCSpriteBatchNode*, cocos2d::CCRect, bool, cocos2d::CCRect) = ios 0x21d68c;
 	virtual void setSpriteFrame(cocos2d::CCSpriteFrame*);
@@ -1774,44 +1774,4 @@ class cocos2d::CCFadeTo {
 	virtual cocos2d::CCObject* copyWithZone(cocos2d::CCZone*);
 	virtual void update(float);
 	virtual void startWithTarget(cocos2d::CCNode*);
-}
-
-[[link(win, android)]]
-class cocos2d::extension::CCScale9Sprite {
-	
-    static CCScale9Sprite* create(const char* file, cocos2d::CCRect rect,  cocos2d::CCRect capInsets);
-    static CCScale9Sprite* create(const char* file, cocos2d::CCRect rect);
-    static CCScale9Sprite* create(cocos2d::CCRect capInsets, const char* file);
-    static CCScale9Sprite* create(const char* file);
-    static CCScale9Sprite* createWithSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame, cocos2d::CCRect capInsets); 
-    static CCScale9Sprite* createWithSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame);  
-    static CCScale9Sprite* createWithSpriteFrameName(const char* spriteFrameName, cocos2d::CCRect capInsets); 
-    static CCScale9Sprite* createWithSpriteFrameName(const char* spriteFrameName);
-
-    CCScale9Sprite* resizableSpriteWithCapInsets(cocos2d::CCRect capInsets);
-
-    virtual void setContentSize(const cocos2d::CCSize & size);
-	virtual void visit();
-	virtual bool init();
-    virtual bool initWithBatchNode(cocos2d::CCSpriteBatchNode* batchnode, cocos2d::CCRect rect, bool rotated, cocos2d::CCRect capInsets);
-    virtual bool initWithBatchNode(cocos2d::CCSpriteBatchNode* batchnode, cocos2d::CCRect rect, cocos2d::CCRect capInsets);
-    virtual bool initWithFile(const char* file, cocos2d::CCRect rect,  cocos2d::CCRect capInsets);
-    virtual bool initWithFile(const char* file, cocos2d::CCRect rect);
-    virtual bool initWithFile(cocos2d::CCRect capInsets, const char* file);
-    virtual bool initWithFile(const char* file);
-    virtual bool initWithSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame, cocos2d::CCRect capInsets);
-    virtual bool initWithSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame);
-    virtual bool initWithSpriteFrameName(const char* spriteFrameName, cocos2d::CCRect capInsets);
-    virtual bool initWithSpriteFrameName(const char* spriteFrameName);
-    virtual void setOpacityModifyRGB(bool bValue);
-    //virtual bool isOpacityModifyRGB(void);
-    //virtual void setOpacity(GLubyte opacity);
-	//virtual GLubyte getOpacity();
-    virtual void setColor(const cocos2d::ccColor3B& color);
-	virtual const ccColor3B& getColor();
-    virtual bool updateWithBatchNode(cocos2d::CCSpriteBatchNode* batchnode, cocos2d::CCRect rect, bool rotated, cocos2d::CCRect capInsets);
-    virtual void setSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame);
-    virtual void updateDisplayedOpacity(GLubyte parentOpacity);
-    virtual void updateDisplayedColor(const cocos2d::ccColor3B& parentColor);
-
 }
