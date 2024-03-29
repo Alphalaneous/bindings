@@ -1324,9 +1324,9 @@ class cocos2d::extension::CCScale9Sprite {
     virtual bool initWithSpriteFrameName(const char* spriteFrameName, cocos2d::CCRect capInsets);
     virtual bool initWithSpriteFrameName(const char* spriteFrameName);
     virtual void setOpacityModifyRGB(bool bValue);
-    virtual bool isOpacityModifyRGB(void);
-    virtual void setOpacity(GLubyte opacity);
-	virtual GLubyte getOpacity();
+    //virtual bool isOpacityModifyRGB(void);
+    //virtual void setOpacity(GLubyte opacity);
+	//virtual GLubyte getOpacity();
     virtual void setColor(const cocos2d::ccColor3B& color);
 	virtual const ccColor3B& getColor();
     virtual bool updateWithBatchNode(cocos2d::CCSpriteBatchNode* batchnode, cocos2d::CCRect rect, bool rotated, cocos2d::CCRect capInsets);
