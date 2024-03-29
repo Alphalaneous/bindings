@@ -1295,3 +1295,43 @@ class cocos2d::CCDelayTime {
 	virtual void update(float);
 	virtual cocos2d::CCActionInterval* reverse();
 }
+
+[[link(win, android)]]
+class cocos2d::extension::CCScale9Sprite {
+	
+    static CCScale9Sprite* create(const char* file, cocos2d::CCRect rect,  cocos2d::CCRect capInsets);
+    static CCScale9Sprite* create(const char* file, cocos2d::CCRect rect);
+    static CCScale9Sprite* create(cocos2d::CCRect capInsets, const char* file);
+    static CCScale9Sprite* create(const char* file);
+    static CCScale9Sprite* createWithSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame, cocos2d::CCRect capInsets); 
+    static CCScale9Sprite* createWithSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame);  
+    static CCScale9Sprite* createWithSpriteFrameName(const char* spriteFrameName, cocos2d::CCRect capInsets); 
+    static CCScale9Sprite* createWithSpriteFrameName(const char* spriteFrameName);
+
+    CCScale9Sprite* resizableSpriteWithCapInsets(cocos2d::CCRect capInsets);
+
+    virtual void setContentSize(const cocos2d::CCSize & size);
+	virtual void visit();
+	virtual bool init();
+    virtual bool initWithBatchNode(cocos2d::CCSpriteBatchNode* batchnode, cocos2d::CCRect rect, bool rotated, cocos2d::CCRect capInsets);
+    virtual bool initWithBatchNode(cocos2d::CCSpriteBatchNode* batchnode, cocos2d::CCRect rect, cocos2d::CCRect capInsets);
+    virtual bool initWithFile(const char* file, cocos2d::CCRect rect,  cocos2d::CCRect capInsets);
+    virtual bool initWithFile(const char* file, cocos2d::CCRect rect);
+    virtual bool initWithFile(cocos2d::CCRect capInsets, const char* file);
+    virtual bool initWithFile(const char* file);
+    virtual bool initWithSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame, cocos2d::CCRect capInsets);
+    virtual bool initWithSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame);
+    virtual bool initWithSpriteFrameName(const char* spriteFrameName, cocos2d::CCRect capInsets);
+    virtual bool initWithSpriteFrameName(const char* spriteFrameName);
+    virtual void setOpacityModifyRGB(bool bValue);
+    virtual bool isOpacityModifyRGB(void);
+    virtual void setOpacity(GLubyte opacity);
+	virtual GLubyte getOpacity();
+    virtual void setColor(const cocos2d::ccColor3B& color);
+	virtual const ccColor3B& getColor();
+    virtual bool updateWithBatchNode(cocos2d::CCSpriteBatchNode* batchnode, cocos2d::CCRect rect, bool rotated, cocos2d::CCRect capInsets);
+    virtual void setSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame);
+    virtual void updateDisplayedOpacity(GLubyte parentOpacity);
+    virtual void updateDisplayedColor(const cocos2d::ccColor3B& parentColor);
+
+}
