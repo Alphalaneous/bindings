@@ -9507,7 +9507,7 @@ class LevelSearchLayer : cocos2d::CCLayer, TextInputDelegate, FLAlertLayerProtoc
 	void onBack(cocos2d::CCObject* sender) = win 0x2646e0;
 	void onClearFreeSearch(cocos2d::CCObject* sender) = win 0x2646a0;
 	void onClose(cocos2d::CCObject* sender);
-	void onFollowed(cocos2d::CCObject* sender);
+	void onFollowed(cocos2d::CCObject* sender) = win 0x2642a0;
 	void onFriends(cocos2d::CCObject* sender);
 	void onLatestStars(cocos2d::CCObject* sender);
 	void onMagic(cocos2d::CCObject* sender);
