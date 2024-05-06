@@ -2675,7 +2675,7 @@ class EditorUI : cocos2d::CCLayer, FLAlertLayerProtocol, ColorSelectDelegate, GJ
 	TodoReturn deactivateRotationControl();
 	TodoReturn deactivateScaleControl();
 	TodoReturn deactivateTransformControl();
-	TodoReturn deleteObject(GameObject*, bool);
+	void deleteObject(GameObject*, bool);
 	TodoReturn deleteSmartBlocksFromObjects(cocos2d::CCArray*);
 	TodoReturn deleteTypeFromObjects(int, cocos2d::CCArray*);
 	TodoReturn deselectAll();
@@ -2684,9 +2684,9 @@ class EditorUI : cocos2d::CCLayer, FLAlertLayerProtocol, ColorSelectDelegate, GJ
 	TodoReturn deselectObjectsColor();
 	TodoReturn deselectTargetPortals();
 	TodoReturn disableButton(CreateMenuItem*);
-	TodoReturn doCopyObjects(bool);
+	void doCopyObjects(bool);
 	TodoReturn doPasteInPlace(bool);
-	TodoReturn doPasteObjects(bool);
+	void doPasteObjects(bool);
 	TodoReturn dynamicGroupUpdate(bool);
 	TodoReturn edgeForObject(int, int);
 	TodoReturn editButton2Usable();
@@ -2748,7 +2748,7 @@ class EditorUI : cocos2d::CCLayer, FLAlertLayerProtocol, ColorSelectDelegate, GJ
 	void onCopyState(cocos2d::CCObject* sender);
 	bool onCreate();
 	void onCreateButton(cocos2d::CCObject* sender);
-	TodoReturn onCreateObject(int);
+	void onCreateObject(int);
 	void onDelete(cocos2d::CCObject* sender);
 	void onDeleteAll(cocos2d::CCObject* sender);
 	void onDeleteCustomItem(cocos2d::CCObject* sender);
@@ -2807,9 +2807,9 @@ class EditorUI : cocos2d::CCLayer, FLAlertLayerProtocol, ColorSelectDelegate, GJ
 	void rotateObjects(cocos2d::CCArray*, float, cocos2d::CCPoint);
 	TodoReturn rotationforCommand(EditCommand);
 	void scaleObjects(cocos2d::CCArray*, float, float, cocos2d::CCPoint, ObjectScaleType, bool);
-	TodoReturn selectAll();
-	TodoReturn selectAllWithDirection(bool);
-	TodoReturn selectBuildTab(int);
+	void selectAll();
+	void selectAllWithDirection(bool);
+	void selectBuildTab(int);
 	void selectObject(GameObject*, bool);
 	void selectObjects(cocos2d::CCArray*, bool);
 	void selectObjectsInRect(cocos2d::CCRect);
@@ -2868,8 +2868,8 @@ class EditorUI : cocos2d::CCLayer, FLAlertLayerProtocol, ColorSelectDelegate, GJ
 	TodoReturn valueFromXPos(float);
 	TodoReturn xPosFromValue(float);
 	TodoReturn zoomGameLayer(bool);
-	TodoReturn zoomIn(cocos2d::CCObject*);
-	TodoReturn zoomOut(cocos2d::CCObject*);
+	void zoomIn(cocos2d::CCObject*);
+	void zoomOut(cocos2d::CCObject*);
 
 	virtual void draw();
 	virtual bool ccTouchBegan(cocos2d::CCTouch*, cocos2d::CCEvent*);
@@ -8947,7 +8947,7 @@ class LevelEditorLayer : GJBaseGameLayer, LevelSettingsDelegate {
 	TodoReturn processLoadedMoveActions();
 	TodoReturn quickUpdateAllPositions();
 	TodoReturn recreateGroups();
-	TodoReturn redoLastAction();
+	void redoLastAction();
 	TodoReturn refreshSpecial(GameObject*);
 	TodoReturn removeAllObjects();
 	TodoReturn removeAllObjectsOfType(int);

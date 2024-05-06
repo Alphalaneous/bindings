@@ -1297,6 +1297,27 @@ class cocos2d::CCDelayTime {
 }
 
 [[link(win, android)]]
+class cocos2d::CCTextureCache {
+	cocos2d::CCTexture2D* addImage(char*, bool);
+}
+
+[[link(win, android)]]
+class cocos2d::CCSpriteFrame {
+
+	cocos2d::CCTexture2D* getTexture();
+	void setTexture(cocos2d::CCTexture2D*);
+	static CCSpriteFrame* create(const char* filename, const cocos2d::CCRect& rect);
+    static CCSpriteFrame* create(const char* filename, const cocos2d::CCRect& rect, bool rotated, const cocos2d::CCPoint& offset, const cocos2d::CCSize& originalSize);
+    static CCSpriteFrame* createWithTexture(cocos2d::CCTexture2D* pobTexture, const cocos2d::CCRect& rect);
+    static CCSpriteFrame* createWithTexture(cocos2d::CCTexture2D* pobTexture, const cocos2d::CCRect& rect, bool rotated, const cocos2d::CCPoint& offset, const cocos2d::CCSize& originalSize);
+
+    bool initWithTexture(cocos2d::CCTexture2D* pobTexture, const cocos2d::CCRect& rect);
+    bool initWithTextureFilename(const char* filename, const cocos2d::CCRect& rect);
+    bool initWithTexture(cocos2d::CCTexture2D* pobTexture, const cocos2d::CCRect& rect, bool rotated, const cocos2d::CCPoint& offset, const cocos2d::CCSize& originalSize);
+    bool initWithTextureFilename(const char* filename, const cocos2d::CCRect& rect, bool rotated, const cocos2d::CCPoint& offset, const cocos2d::CCSize& originalSize);
+}
+
+[[link(win, android)]]
 class cocos2d::extension::CCScale9Sprite {
 	
     static CCScale9Sprite* create(const char* file, cocos2d::CCRect rect,  cocos2d::CCRect capInsets);
