@@ -2805,7 +2805,7 @@ class EditorUI : cocos2d::CCLayer, FLAlertLayerProtocol, ColorSelectDelegate, GJ
 	TodoReturn resetSelectedObjectsColor();
 	TodoReturn resetUI();
 	void rotateObjects(cocos2d::CCArray*, float, cocos2d::CCPoint);
-	TodoReturn rotationforCommand(EditCommand);
+	void rotationforCommand(EditCommand);
 	void scaleObjects(cocos2d::CCArray*, float, float, cocos2d::CCPoint, ObjectScaleType, bool);
 	void selectAll();
 	void selectAllWithDirection(bool);
