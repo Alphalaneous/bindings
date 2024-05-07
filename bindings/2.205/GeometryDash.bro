@@ -3665,7 +3665,7 @@ class FMODAudioEngine : cocos2d::CCNode {
 	TodoReturn pitchForIdx(int);
 	void playEffect(gd::string, float, float, float);
 	void playEffect(gd::string);
-	TodoReturn playEffectAdvanced(gd::string, float, float, float, float, bool, bool, int, int, int, int, bool, int, bool, bool, int, int, float, int);
+	void playEffectAdvanced(gd::string, float, float, float, float, bool, bool, int, int, int, int, bool, int, bool, bool, int, int, float, int);
 	void playEffectAsync(gd::string);
 	TodoReturn playMusic(gd::string, bool, float, int);
 	TodoReturn preloadEffect(gd::string);
