@@ -3687,7 +3687,7 @@ class FMODAudioEngine : cocos2d::CCNode {
 	TodoReturn pitchForIdx(int) = win 0x350e0;
 	void playEffect(gd::string, float, float, float) = win 0x356e0;
 	void playEffect(gd::string) = win 0x35590;
-	TodoReturn playEffectAdvanced(gd::string, float, float, float, float, bool, bool, int, int, int, int, bool, int, bool, bool, int, int, float, int) = win 0x357b0;
+	void playEffectAdvanced(gd::string, float, float, float, float, bool, bool, int, int, int, int, bool, int, bool, bool, int, int, float, int) = win 0x357b0;
 	void playEffectAsync(gd::string) = win 0x35620;
 	TodoReturn playMusic(gd::string, bool, float, int) = win 0x385b0;
 	TodoReturn preloadEffect(gd::string) = win 0x37a10;
@@ -3699,8 +3699,8 @@ class FMODAudioEngine : cocos2d::CCNode {
 	TodoReturn queueStartMusic(gd::string, float, float, float, bool, int, int, int, int, int, bool, int, bool);
 	TodoReturn registerChannel(FMOD::Channel*, int, int) = win 0x36410;
 	void releaseRemovedSounds() = win 0x3b040;
-	TodoReturn resumeAllAudio();
-	TodoReturn resumeAllEffects();
+	void resumeAllAudio() = win 0x38310;
+	void resumeAllEffects() = win 0x38350;
 	TodoReturn resumeAllMusic() = win 0x383a0;
 	TodoReturn resumeAudio();
 	TodoReturn resumeEffect(unsigned int);
