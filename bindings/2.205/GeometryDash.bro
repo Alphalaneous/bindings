@@ -2805,7 +2805,7 @@ class EditorUI : cocos2d::CCLayer, FLAlertLayerProtocol, ColorSelectDelegate, GJ
 	TodoReturn resetSelectedObjectsColor();
 	TodoReturn resetUI();
 	void rotateObjects(cocos2d::CCArray*, float, cocos2d::CCPoint);
-	void rotationforCommand(EditCommand);
+	float rotationforCommand(EditCommand);
 	void scaleObjects(cocos2d::CCArray*, float, float, cocos2d::CCPoint, ObjectScaleType, bool);
 	void selectAll();
 	void selectAllWithDirection(bool);
@@ -2842,7 +2842,7 @@ class EditorUI : cocos2d::CCLayer, FLAlertLayerProtocol, ColorSelectDelegate, GJ
 	TodoReturn toggleSwipe(cocos2d::CCObject*);
 	TodoReturn transformObject(GameObject*, EditCommand, bool);
 	TodoReturn transformObjectCall(cocos2d::CCObject*);
-	TodoReturn transformObjectCall(EditCommand);
+	void transformObjectCall(EditCommand);
 	TodoReturn transformObjects(cocos2d::CCArray*, cocos2d::CCPoint, float, float, float, float, float, float);
 	TodoReturn transformObjectsActive();
 	TodoReturn transformObjectsReset();
@@ -2867,7 +2867,7 @@ class EditorUI : cocos2d::CCLayer, FLAlertLayerProtocol, ColorSelectDelegate, GJ
 	TodoReturn updateZoom(float);
 	TodoReturn valueFromXPos(float);
 	TodoReturn xPosFromValue(float);
-	TodoReturn zoomGameLayer(bool);
+	void zoomGameLayer(bool);
 	void zoomIn(cocos2d::CCObject*);
 	void zoomOut(cocos2d::CCObject*);
 
