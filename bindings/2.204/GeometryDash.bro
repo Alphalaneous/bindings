@@ -2758,7 +2758,7 @@ class EditorUI : cocos2d::CCLayer, FLAlertLayerProtocol, ColorSelectDelegate, GJ
 	void onCreateObject(int) = win 0xc7fc0;
 	void onDelete(cocos2d::CCObject* sender) = win 0xa9b50;
 	void onDeleteAll(cocos2d::CCObject* sender);
-	void onDeleteCustomItem(cocos2d::CCObject* sender);
+	void onDeleteCustomItem(cocos2d::CCObject* sender) = win 0xa8440;
 	void onDeleteInfo(cocos2d::CCObject* sender);
 	void onDeleteSelected(cocos2d::CCObject* sender) = win 0xaa1a0;
 	void onDeleteSelectedType(cocos2d::CCObject* sender) = win 0xaa5f0;
@@ -2791,8 +2791,8 @@ class EditorUI : cocos2d::CCLayer, FLAlertLayerProtocol, ColorSelectDelegate, GJ
 	TodoReturn onToggleSelectedOrder(EffectGameObject*);
 	void onUngroupSticky(cocos2d::CCObject* sender) = win 0xca600;
 	void onUpdateDeleteFilter(cocos2d::CCObject* sender) = win 0xaabe0;
-	TodoReturn orderDownCustomItem(cocos2d::CCObject*);
-	TodoReturn orderUpCustomItem(cocos2d::CCObject*);
+	void orderDownCustomItem(cocos2d::CCObject*) = win 0xa8510;
+	void orderUpCustomItem(cocos2d::CCObject*) = win 0xa84b0;
 	void pasteObjects(gd::string, bool) = win 0xcb240;
 	TodoReturn playCircleAnim(cocos2d::CCPoint, float, float);
 	TodoReturn playerTouchBegan(cocos2d::CCTouch*, cocos2d::CCEvent*);
