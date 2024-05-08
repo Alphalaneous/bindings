@@ -2467,8 +2467,8 @@ class EditButtonBar : cocos2d::CCNode {
 	void goToPage(int);
 	bool init(cocos2d::CCArray* objects, cocos2d::CCPoint size, int unk, bool unkBool, int columns, int rows) = win 0x9b8e0;
 	void loadFromItems(cocos2d::CCArray*, int, int, bool) = win 0x9b970;
-	void onLeft(cocos2d::CCObject* sender);
-	void onRight(cocos2d::CCObject* sender);
+	void onLeft(cocos2d::CCObject* sender) = win 0x9c090;
+	void onRight(cocos2d::CCObject* sender) = win 0x9c030;
 	void reloadItems(int rowCount, int columnCount) {
 		if (m_buttonArray)
 			this->loadFromItems(m_buttonArray, rowCount, columnCount, m_unknown);
@@ -2833,20 +2833,20 @@ class EditorUI : cocos2d::CCLayer, FLAlertLayerProtocol, ColorSelectDelegate, GJ
 	void showMaxCoinError() = win 0xca750;
 	void showMaxError() = win 0xca640;
 	void showUI(bool) = win 0xc9c10;
-	TodoReturn sliderChanged(cocos2d::CCObject*) = win 0xa6cd0;
+	void sliderChanged(cocos2d::CCObject*) = win 0xa6cd0;
 	TodoReturn smartTypeForKey(int);
 	TodoReturn spriteFromObjectString(gd::string, bool, bool, int, cocos2d::CCArray*, cocos2d::CCArray*, GameObject*);
 	TodoReturn toggleDuplicateButton();
 	TodoReturn toggleEditObjectButton() = win 0xd1680;
-	TodoReturn toggleEnableRotate(cocos2d::CCObject*) = win 0xc8900;
+	void toggleEnableRotate(cocos2d::CCObject*) = win 0xc8900;
 	void toggleFreeMove(cocos2d::CCObject*) = win 0xc8810;
 	TodoReturn toggleLockUI(bool);
-	TodoReturn toggleMode(cocos2d::CCObject*) = win 0xa8c20;
+	void toggleMode(cocos2d::CCObject*) = win 0xa8c20;
 	TodoReturn toggleObjectInfoLabel();
-	TodoReturn toggleSnap(cocos2d::CCObject*) = win 0xc8880;
+	void toggleSnap(cocos2d::CCObject*) = win 0xc8880;
 	TodoReturn toggleSpecialEditButtons();
 	TodoReturn toggleStickyControls(bool) = win 0xa6080;
-	TodoReturn toggleSwipe(cocos2d::CCObject*) = win 0xc87a0;
+	void toggleSwipe(cocos2d::CCObject*) = win 0xc87a0;
 	TodoReturn transformObject(GameObject*, EditCommand, bool) = win 0xd5780;
 	TodoReturn transformObjectCall(cocos2d::CCObject*) = win 0xd5360;
 	void transformObjectCall(EditCommand) = win 0xd5380;
@@ -9034,7 +9034,7 @@ class LevelEditorLayer : GJBaseGameLayer, LevelSettingsDelegate {
 	TodoReturn refreshSpecial(GameObject*);
 	TodoReturn removeAllObjects() = win 0x23d360;
 	TodoReturn removeAllObjectsOfType(int);
-	TodoReturn removeObject(GameObject*, bool) = win 0x23d2b0;
+	void removeObject(GameObject*, bool) = win 0x23d2b0;
 	TodoReturn removePlayerCollisionBlock();
 	TodoReturn removeSpecial(GameObject*) = win 0x23f2f0;
 	TodoReturn resetDelayedSpawnNodes();
