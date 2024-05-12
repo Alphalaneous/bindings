@@ -719,7 +719,20 @@ class cocos2d::CCEGLView {
 	// CCEGLView(cocos2d::CCEGLView const&);
 	virtual void swapBuffers();
 	void toggleFullScreen(bool, bool);
-	// rest are in extras
+	void pollEvents();
+	// rest are in extras (lie)
+	void onGLFWCharCallback(GLFWwindow* window, unsigned int entered);
+	void onGLFWCursorEnterFunCallback(GLFWwindow* window, int entered);
+	void onGLFWDeviceChangeFunCallback(GLFWwindow* window);
+	void onGLFWError(int code, char const* description);
+	void onGLFWKeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
+	void onGLFWMouseCallBack(GLFWwindow* window, int button, int action, int mods);
+	void onGLFWMouseMoveCallBack(GLFWwindow* window, double x, double y);
+	void onGLFWMouseScrollCallback(GLFWwindow* window, double xOffset, double yOffset);
+	void onGLFWWindowIconifyFunCallback(GLFWwindow* window, int iconified);
+	void onGLFWWindowPosCallback(GLFWwindow* window, int x, int y);
+	void onGLFWWindowSizeFunCallback(GLFWwindow* window, int width, int height);
+	void onGLFWframebuffersize(GLFWwindow* window, int width, int height);
 }
 
 [[link(win, android)]]
@@ -1297,62 +1310,56 @@ class cocos2d::CCDelayTime {
 }
 
 [[link(win, android)]]
-class cocos2d::CCTextureCache {
-	cocos2d::CCTexture2D* addImage(char*, bool);
-}
-
-[[link(win, android)]]
-class cocos2d::CCSpriteFrame {
-
-	cocos2d::CCTexture2D* getTexture();
-	void setTexture(cocos2d::CCTexture2D*);
-	static CCSpriteFrame* create(const char* filename, const cocos2d::CCRect& rect);
-    static CCSpriteFrame* create(const char* filename, const cocos2d::CCRect& rect, bool rotated, const cocos2d::CCPoint& offset, const cocos2d::CCSize& originalSize);
-    static CCSpriteFrame* createWithTexture(cocos2d::CCTexture2D* pobTexture, const cocos2d::CCRect& rect);
-    static CCSpriteFrame* createWithTexture(cocos2d::CCTexture2D* pobTexture, const cocos2d::CCRect& rect, bool rotated, const cocos2d::CCPoint& offset, const cocos2d::CCSize& originalSize);
-
-    bool initWithTexture(cocos2d::CCTexture2D* pobTexture, const cocos2d::CCRect& rect);
-    bool initWithTextureFilename(const char* filename, const cocos2d::CCRect& rect);
-    bool initWithTexture(cocos2d::CCTexture2D* pobTexture, const cocos2d::CCRect& rect, bool rotated, const cocos2d::CCPoint& offset, const cocos2d::CCSize& originalSize);
-    bool initWithTextureFilename(const char* filename, const cocos2d::CCRect& rect, bool rotated, const cocos2d::CCPoint& offset, const cocos2d::CCSize& originalSize);
-}
-
-[[link(win, android)]]
 class cocos2d::extension::CCScale9Sprite {
-	
-    static CCScale9Sprite* create(const char* file, cocos2d::CCRect rect,  cocos2d::CCRect capInsets);
-    static CCScale9Sprite* create(const char* file, cocos2d::CCRect rect);
-    static CCScale9Sprite* create(cocos2d::CCRect capInsets, const char* file);
-    static CCScale9Sprite* create(const char* file);
-    static CCScale9Sprite* createWithSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame, cocos2d::CCRect capInsets); 
-    static CCScale9Sprite* createWithSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame);  
-    static CCScale9Sprite* createWithSpriteFrameName(const char* spriteFrameName, cocos2d::CCRect capInsets); 
-    static CCScale9Sprite* createWithSpriteFrameName(const char* spriteFrameName);
+	static cocos2d::extension::CCScale9Sprite* create();
+	static cocos2d::extension::CCScale9Sprite* createWithSpriteFrameName(char const*);
+	static cocos2d::extension::CCScale9Sprite* createWithSpriteFrameName(char const*, cocos2d::CCRect);
+	static cocos2d::extension::CCScale9Sprite* create(char const*);
+	static cocos2d::extension::CCScale9Sprite* create(char const*, cocos2d::CCRect);
 
-    CCScale9Sprite* resizableSpriteWithCapInsets(cocos2d::CCRect capInsets);
+	CCScale9Sprite();
+	~CCScale9Sprite();
 
-    virtual void setContentSize(const cocos2d::CCSize & size);
-	virtual void visit();
 	virtual bool init();
-    virtual bool initWithBatchNode(cocos2d::CCSpriteBatchNode* batchnode, cocos2d::CCRect rect, bool rotated, cocos2d::CCRect capInsets);
-    virtual bool initWithBatchNode(cocos2d::CCSpriteBatchNode* batchnode, cocos2d::CCRect rect, cocos2d::CCRect capInsets);
-    virtual bool initWithFile(const char* file, cocos2d::CCRect rect,  cocos2d::CCRect capInsets);
-    virtual bool initWithFile(const char* file, cocos2d::CCRect rect);
-    virtual bool initWithFile(cocos2d::CCRect capInsets, const char* file);
-    virtual bool initWithFile(const char* file);
-    virtual bool initWithSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame, cocos2d::CCRect capInsets);
-    virtual bool initWithSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame);
-    virtual bool initWithSpriteFrameName(const char* spriteFrameName, cocos2d::CCRect capInsets);
-    virtual bool initWithSpriteFrameName(const char* spriteFrameName);
-    virtual void setOpacityModifyRGB(bool bValue);
-    //virtual bool isOpacityModifyRGB(void);
-    //virtual void setOpacity(GLubyte opacity);
-	//virtual GLubyte getOpacity();
-    virtual void setColor(const cocos2d::ccColor3B& color);
-	virtual const ccColor3B& getColor();
-    virtual bool updateWithBatchNode(cocos2d::CCSpriteBatchNode* batchnode, cocos2d::CCRect rect, bool rotated, cocos2d::CCRect capInsets);
-    virtual void setSpriteFrame(cocos2d::CCSpriteFrame* spriteFrame);
-    virtual void updateDisplayedOpacity(GLubyte parentOpacity);
-    virtual void updateDisplayedColor(const cocos2d::ccColor3B& parentColor);
+	virtual void setContentSize(const cocos2d::CCSize& size);
+	virtual void visit();
+	virtual GLubyte getOpacity();
+	virtual void setOpacity(GLubyte opacity);
+	virtual void updateDisplayedOpacity(GLubyte parentOpacity);
+	virtual const cocos2d::ccColor3B& getColor();
+	virtual void setColor(const cocos2d::ccColor3B& color);
+	virtual void updateDisplayedColor(const cocos2d::ccColor3B& parentColor);
+	virtual void setOpacityModifyRGB(bool bValue);
+	virtual bool isOpacityModifyRGB();
+	virtual cocos2d::CCSize getPreferredSize();
+	virtual void setPreferredSize(cocos2d::CCSize);
+	virtual cocos2d::CCRect getCapInsets();
+	virtual void setCapInsets(cocos2d::CCRect);
+	virtual float getInsetLeft();
+	virtual void setInsetLeft(float);
+	virtual float getInsetTop();
+	virtual void setInsetTop(float);
+	virtual float getInsetRight();
+	virtual void setInsetRight(float);
+	virtual float getInsetBottom();
+	virtual void setInsetBottom(float);
+	virtual bool initWithBatchNode(cocos2d::CCSpriteBatchNode*, cocos2d::CCRect, bool, cocos2d::CCRect);
+	virtual bool initWithBatchNode(cocos2d::CCSpriteBatchNode*, cocos2d::CCRect, cocos2d::CCRect);
+	virtual bool initWithFile(const char*, cocos2d::CCRect, cocos2d::CCRect);
+	virtual bool initWithFile(const char*, cocos2d::CCRect);
+	virtual bool initWithFile(cocos2d::CCRect, const char*);
+	virtual bool initWithFile(const char*);
+	virtual bool initWithSpriteFrame(cocos2d::CCSpriteFrame*, cocos2d::CCRect);
+	virtual bool initWithSpriteFrame(cocos2d::CCSpriteFrame*);
+	virtual bool initWithSpriteFrameName(const char*, cocos2d::CCRect);
+	virtual bool initWithSpriteFrameName(const char*);
+	virtual bool updateWithBatchNode(cocos2d::CCSpriteBatchNode*, cocos2d::CCRect, bool, cocos2d::CCRect);
+	virtual void setSpriteFrame(cocos2d::CCSpriteFrame*);
+}
 
+[[link(win, android)]]
+class cocos2d::extension::CCHttpClient : cocos2d::CCObject {
+	static cocos2d::extension::CCHttpClient* getInstance();
+	static void destroyInstance();
+	void send(cocos2d::extension::CCHttpRequest* request);
 }
