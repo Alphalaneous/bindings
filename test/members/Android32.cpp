@@ -68,7 +68,6 @@ GEODE_MEMBER_CHECK(GJGameState, m_unk2e8, 0x2e8);
 GEODE_SIZE_CHECK(GJBaseGameLayer, 0x2d60);
 
 GEODE_MEMBER_CHECK(GJBaseGameLayer, m_level, 0x5f8);
-GEODE_MEMBER_CHECK(GJBaseGameLayer, m_effectManager, 0x664);
 GEODE_MEMBER_CHECK(GJBaseGameLayer, m_player1, 0x88C); //used in PlayLayer::destroyPlayer for example // no silly createPlayer() is easier
 GEODE_MEMBER_CHECK(GJBaseGameLayer, m_player2, 0x890);
 GEODE_MEMBER_CHECK(GJBaseGameLayer, m_levelSettings, 0x894);
@@ -82,20 +81,13 @@ GEODE_MEMBER_CHECK(GJBaseGameLayer, m_levelLength, 0x2ab8);
 GEODE_MEMBER_CHECK(GJBaseGameLayer, m_queuedButtons, 0x2B48);
 GEODE_MEMBER_CHECK(GJBaseGameLayer, m_uiLayer, 0x2c04);
 GEODE_MEMBER_CHECK(GJBaseGameLayer, m_sections, 0x2c2c);
-GEODE_MEMBER_CHECK(GJBaseGameLayer, m_loadingLayer, 0x2d4c);
-GEODE_MEMBER_CHECK(GJBaseGameLayer, m_debugDrawNode, 0x2d50);
 
-GEODE_MEMBER_CHECK(PlayLayer, m_coinArray, 0x2d90);
 GEODE_MEMBER_CHECK(PlayLayer, m_circleWaveArray, 0x2e18);
-GEODE_MEMBER_CHECK(PlayLayer, m_attemptLabel, 0x2e2c);
 GEODE_MEMBER_CHECK(PlayLayer, m_progressBar, 0x2e38);
-GEODE_MEMBER_CHECK(PlayLayer, m_colorKeyDict, 0x2f10);
-GEODE_MEMBER_CHECK(PlayLayer, m_nextColorKey, 0x2f38);
 
 GEODE_MEMBER_CHECK(PlayerObject, m_unk4e4, 0x4d4);
 GEODE_MEMBER_CHECK(PlayerObject, m_collidedObject, 0x514);
 GEODE_MEMBER_CHECK(PlayerObject, m_particleSystems, 0x580);
-GEODE_MEMBER_CHECK(PlayerObject, m_isHidden, 0x5cb);
 GEODE_MEMBER_CHECK(PlayerObject, m_ghostTrail, 0x5d0);
 GEODE_MEMBER_CHECK(PlayerObject, m_waveTrail, 0x610);
 GEODE_MEMBER_CHECK(PlayerObject, m_unk644, 0x62c);
@@ -104,8 +96,8 @@ GEODE_MEMBER_CHECK(PlayerObject, m_unk6a2, 0x68a);
 GEODE_MEMBER_CHECK(PlayerObject, m_unk6a3, 0x68b);
 GEODE_MEMBER_CHECK(PlayerObject, m_unk6a4, 0x6a4);
 GEODE_MEMBER_CHECK(PlayerObject, m_objectSnappedTo, 0x6c0);
-GEODE_MEMBER_CHECK(PlayerObject, m_playerGroundParticles, 0x6d8);
-GEODE_MEMBER_CHECK(PlayerObject, m_landParticles1, 0x704);
+GEODE_MEMBER_CHECK(PlayerObject, m_unk6dc, 0x6d8);
+GEODE_MEMBER_CHECK(PlayerObject, m_unk708, 0x704);
 GEODE_MEMBER_CHECK(PlayerObject, m_hasCustomGlowColor, 0x770);
 GEODE_MEMBER_CHECK(PlayerObject, m_isDart, 0x7ac);
 GEODE_MEMBER_CHECK(PlayerObject, m_vehicleSize, 0x7e0);
@@ -129,7 +121,7 @@ GEODE_MEMBER_CHECK(GameManager, m_gameLayer, 0x174);
 
 GEODE_MEMBER_CHECK(EditorUI, m_selectedObjects, 0x260);
 GEODE_MEMBER_CHECK(EditorUI, m_selectedObject, 0x370);
-GEODE_MEMBER_CHECK(EditorUI, m_buttonBar, 0x1c0);
+GEODE_MEMBER_CHECK(EditorUI, m_buttonBar, 0x1bc);
 GEODE_MEMBER_CHECK(EditorUI, m_transformControl, 0x218);
 GEODE_MEMBER_CHECK(EditorUI, m_editButtonBar, 0x22c);
 GEODE_MEMBER_CHECK(EditorUI, m_positionSlider, 0x230);
@@ -142,12 +134,6 @@ GEODE_MEMBER_CHECK(ColorSelectPopup, m_colorAction, 0x2f0);
 // GEODE_MEMBER_CHECK(PlayerObject, m_isDart, 0x794);
 // GEODE_MEMBER_CHECK(PlayerObject, m_position, 0x804);
 
-GEODE_MEMBER_CHECK(FMODAudioEngine, m_musicVolume, 0x15c);
-GEODE_MEMBER_CHECK(FMODAudioEngine, m_sfxVolume, 0x160);
-GEODE_MEMBER_CHECK(FMODAudioEngine, m_pulse1, 0x16c);
-GEODE_MEMBER_CHECK(FMODAudioEngine, m_pulse2, 0x170);
-GEODE_MEMBER_CHECK(FMODAudioEngine, m_pulse3, 0x174);
-GEODE_MEMBER_CHECK(FMODAudioEngine, m_metering, 0x17c);
 GEODE_MEMBER_CHECK(FMODAudioEngine, m_system, 0x184);
 
 GEODE_MEMBER_CHECK(GameManager, m_playLayer, 0x16c);
@@ -161,17 +147,13 @@ GEODE_SIZE_CHECK(PlayLayer, 0x2F58);
 GEODE_MEMBER_CHECK(GameObject, m_hasExtendedCollision, 0x218);
 GEODE_MEMBER_CHECK(GameObject, m_scaleX, 0x3e8);
 
-GEODE_MEMBER_CHECK(EditorUI, m_transformState, 0x174);
 GEODE_MEMBER_CHECK(EditorUI, m_editButtonBar, 0x22c);
 GEODE_MEMBER_CHECK(EditorUI, m_positionSlider, 0x230);
 GEODE_MEMBER_CHECK(EditorUI, m_selectedObjects, 0x260);
 GEODE_MEMBER_CHECK(EditorUI, m_selectedMode, 0x338);
 GEODE_MEMBER_CHECK(EditorUI, m_selectedObject, 0x370);
 
-GEODE_MEMBER_CHECK(ChallengesPage, m_dots, 0x1FC);
-GEODE_MEMBER_CHECK(ChallengesPage, m_challengeNodes, 0x210);
-
-GEODE_MEMBER_CHECK(GJEffectManager, m_colorActionDict, 0x198);
-//GEODE_MEMBER_CHECK(GJEffectManager, m_itemIDs, 0x210);
+GEODE_MEMBER_CHECK(ChallengesPage, m_dots, 0x1FC)
+GEODE_MEMBER_CHECK(ChallengesPage, m_challengeNodes, 0x210)
 
 #endif

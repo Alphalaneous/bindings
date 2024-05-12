@@ -148,7 +148,7 @@ class AchievementCell {
     // virtual ~AchievementCell();
     AchievementCell(char const*, float, float);
 
-    void loadFromDict(cocos2d::CCDictionary*);
+    TodoReturn loadFromDict(cocos2d::CCDictionary*);
     TodoReturn updateBGColor(int);
 
     virtual bool init();
@@ -1242,7 +1242,7 @@ class CommentCell {
 
     TodoReturn incrementDislikes();
     TodoReturn incrementLikes();
-    void loadFromComment(GJComment*);
+    TodoReturn loadFromComment(GJComment*);
     void onConfirmDelete(cocos2d::CCObject* sender);
     TodoReturn onDelete();
     void onLike(cocos2d::CCObject* sender);
@@ -1370,7 +1370,7 @@ class CustomizeObjectLayer {
     void onSelectColor(cocos2d::CCObject* sender);
     void onSelectMode(cocos2d::CCObject* sender);
     void onUpdateCustomColor(cocos2d::CCObject* sender);
-    void toggleVisible();
+    TodoReturn toggleVisible();
     TodoReturn updateChannelLabel(int);
     TodoReturn updateColorSprite();
     TodoReturn updateCurrentSelection();
@@ -1406,7 +1406,7 @@ class CustomSongCell {
     // virtual ~CustomSongCell();
     CustomSongCell(char const*, float, float);
 
-    void loadFromObject(SongInfoObject*);
+    TodoReturn loadFromObject(SongInfoObject*);
     void onDelete(cocos2d::CCObject* sender);
     TodoReturn updateBGColor(int);
 
@@ -1541,7 +1541,7 @@ class EditButtonBar {
     TodoReturn getPage();
     TodoReturn goToPage(int);
     bool init(cocos2d::CCArray*, cocos2d::CCPoint, int, bool, int, int);
-    void loadFromItems(cocos2d::CCArray*, int, int, bool);
+    TodoReturn loadFromItems(cocos2d::CCArray*, int, int, bool);
     void onLeft(cocos2d::CCObject* sender);
     void onRight(cocos2d::CCObject* sender);
     TodoReturn reloadItems(int, int);
@@ -1573,7 +1573,7 @@ class EditLevelLayer {
     TodoReturn playStep2();
     TodoReturn playStep3();
     TodoReturn scene(GJGameLevel*);
-    void setupLevelInfo();
+    TodoReturn setupLevelInfo();
     TodoReturn updateDescText(char const*);
     TodoReturn verifyLevelName();
 
@@ -2115,7 +2115,7 @@ class FMODAudioEngine {
     TodoReturn setupAudioEngine();
     TodoReturn start();
     TodoReturn stop();
-    void stopAllEffects();
+    TodoReturn stopAllEffects();
     TodoReturn stopBackgroundMusic(bool);
     TodoReturn stopEffect(unsigned int);
     TodoReturn unloadEffect(gd::string);
@@ -2203,7 +2203,7 @@ class FriendRequestPopup {
 
     void blockUser();
     bool init(GJFriendRequest*);
-    void loadFromGJFriendRequest(GJFriendRequest*);
+    TodoReturn loadFromGJFriendRequest(GJFriendRequest*);
     void onAccept(cocos2d::CCObject* sender);
     void onBlock(cocos2d::CCObject* sender);
     void onClose(cocos2d::CCObject* sender);
@@ -2242,7 +2242,7 @@ class GameCell {
     // virtual ~GameCell();
     GameCell(char const*, float, float);
 
-    void loadFromString(gd::string);
+    TodoReturn loadFromString(gd::string);
     void onTouch(cocos2d::CCObject* sender);
     TodoReturn updateBGColor(int);
 
@@ -4193,7 +4193,7 @@ class GJMessageCell {
     // virtual ~GJMessageCell();
     GJMessageCell(char const*, float, float);
 
-    void loadFromMessage(GJUserMessage*);
+    TodoReturn loadFromMessage(GJUserMessage*);
     TodoReturn markAsRead();
     void onDeleteMessage(cocos2d::CCObject* sender);
     void onToggle(cocos2d::CCObject* sender);
@@ -4219,7 +4219,7 @@ class GJMessagePopup {
 
     void blockUser();
     bool init(GJUserMessage*);
-    void loadFromGJMessage(GJUserMessage*);
+    TodoReturn loadFromGJMessage(GJUserMessage*);
     void onBlock(cocos2d::CCObject* sender);
     void onClose(cocos2d::CCObject* sender);
     void onRemove(cocos2d::CCObject* sender);
@@ -4329,7 +4329,7 @@ class GJRequestCell {
     // virtual ~GJRequestCell();
     GJRequestCell(char const*, float, float);
 
-    void loadFromScore(GJUserScore*);
+    TodoReturn loadFromScore(GJUserScore*);
     TodoReturn markAsRead();
     void onDeleteRequest(cocos2d::CCObject* sender);
     void onToggle(cocos2d::CCObject* sender);
@@ -4429,7 +4429,7 @@ class GJScoreCell {
     // virtual ~GJScoreCell();
     GJScoreCell(char const*, float, float);
 
-    void loadFromScore(GJUserScore*);
+    TodoReturn loadFromScore(GJUserScore*);
     void onBan(cocos2d::CCObject* sender);
     void onMoreLevels(cocos2d::CCObject* sender);
     void onViewProfile(cocos2d::CCObject* sender);
@@ -4563,7 +4563,7 @@ class GJUserCell {
     // virtual ~GJUserCell();
     GJUserCell(char const*, float, float);
 
-    void loadFromScore(GJUserScore*);
+    TodoReturn loadFromScore(GJUserScore*);
     void onCancelFriendRequest(cocos2d::CCObject* sender);
     void onRemoveFriend(cocos2d::CCObject* sender);
     void onSendMessage(cocos2d::CCObject* sender);
@@ -4734,8 +4734,8 @@ class GManager {
     TodoReturn getSaveString();
     TodoReturn load();
     TodoReturn loadDataFromFile(gd::string);
-    void loadFromCompressedString(gd::string);
-    void loadFromString(gd::string);
+    TodoReturn loadFromCompressedString(gd::string);
+    TodoReturn loadFromString(gd::string);
     TodoReturn save();
     TodoReturn saveData(DS_Dictionary*, gd::string);
     TodoReturn saveGMTo(gd::string);
@@ -4900,7 +4900,7 @@ class InfoLayer {
     void onOriginal(cocos2d::CCObject* sender);
     void onPrevPage(cocos2d::CCObject* sender);
     TodoReturn setupCommentsBrowser(cocos2d::CCArray*);
-    void setupLevelInfo();
+    TodoReturn setupLevelInfo();
     TodoReturn toggleCommentMode(cocos2d::CCNode*);
     TodoReturn updateCommentModeButtons();
     TodoReturn updateLevelsLabel();
@@ -5059,7 +5059,7 @@ class LevelCell {
     LevelCell(char const*, float, float);
 
     TodoReturn loadCustomLevelCell();
-    void loadFromLevel(GJGameLevel*);
+    TodoReturn loadFromLevel(GJGameLevel*);
     TodoReturn loadLocalLevelCell();
     void onClick(cocos2d::CCObject* sender);
     void onViewProfile(cocos2d::CCObject* sender);
@@ -5275,8 +5275,8 @@ class LevelInfoLayer {
     TodoReturn playStep2();
     TodoReturn playStep3();
     TodoReturn scene(GJGameLevel*);
-    void setupLevelInfo();
-    void setupProgressBars();
+    TodoReturn setupLevelInfo();
+    TodoReturn setupProgressBars();
     TodoReturn shouldDownloadLevel();
     TodoReturn showSongWarning();
     TodoReturn showUpdateAlert(UpdateResponse);
@@ -5597,7 +5597,7 @@ class ListCell {
     // virtual ~ListCell();
     ListCell(char const*, float, float);
 
-    void loadFromObject(cocos2d::CCObject*, int, int, int);
+    TodoReturn loadFromObject(cocos2d::CCObject*, int, int, int);
     TodoReturn updateBGColor(int);
 
     virtual bool init();
@@ -5671,7 +5671,7 @@ class MapPackCell {
     // virtual ~MapPackCell();
     MapPackCell(char const*, float, float);
 
-    void loadFromMapPack(GJMapPack*);
+    TodoReturn loadFromMapPack(GJMapPack*);
     void onClaimReward(cocos2d::CCObject* sender);
     void onClick(cocos2d::CCObject* sender);
     TodoReturn playCompleteEffect();
@@ -6168,7 +6168,7 @@ class PauseLayer {
     void onRestart(cocos2d::CCObject* sender);
     void onResume(cocos2d::CCObject* sender);
     void onTime(cocos2d::CCObject* sender);
-    void setupProgressBars();
+    TodoReturn setupProgressBars();
     TodoReturn sfxSliderChanged(cocos2d::CCObject*);
     TodoReturn tryShowBanner(float);
 
@@ -6349,7 +6349,7 @@ class PlayerObject : GameObject {
     TodoReturn levelFlipFinished();
     TodoReturn levelFlipping();
     TodoReturn levelWillFlip();
-    void loadFromCheckpoint(PlayerCheckpoint*);
+    TodoReturn loadFromCheckpoint(PlayerCheckpoint*);
     TodoReturn lockPlayer();
     TodoReturn logValues();
     TodoReturn placeStreakPoint();
@@ -7490,7 +7490,7 @@ class SongCell {
     // virtual ~SongCell();
     SongCell(char const*, float, float);
 
-    void loadFromObject(SongObject*);
+    TodoReturn loadFromObject(SongObject*);
     void onClick(cocos2d::CCObject* sender);
     TodoReturn updateBGColor(int);
 
@@ -7697,7 +7697,7 @@ class StatsCell {
     StatsCell(char const*, float, float);
 
     TodoReturn getTitleFromKey(char const*);
-    void loadFromObject(StatsObject*);
+    TodoReturn loadFromObject(StatsObject*);
     TodoReturn updateBGColor(int);
 
     virtual bool init();
