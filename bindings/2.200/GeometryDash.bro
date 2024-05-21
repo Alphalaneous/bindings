@@ -1859,7 +1859,7 @@ class GameManager : GManager {
 	TodoReturn videoAdHidden();
 	TodoReturn videoAdShowed();
 	TodoReturn checkUsedIcons() = mac 0x35c8f0;
-	TodoReturn getFontTexture(int);
+	const char* getFontTexture(int);
 	TodoReturn getNextUsedKey(int, bool);
 	/* unverified signature */
 	bool isIconUnlocked(int, IconType) = win 0x120170, mac 0x3559c0;
@@ -1970,7 +1970,7 @@ class GameManager : GManager {
 	void setUGV(char const*, bool) = win 0x126ac0, mac 0x3615a0;
 	TodoReturn iconKey(int, IconType);
 	TodoReturn colorKey(int, UnlockType);
-	TodoReturn loadFont(int);
+	void loadFont(int) = mac 0x360650;
 	cocos2d::CCTexture2D* loadIcon(int, int, int) = win 0x125630, mac 0x35f7a0;
 	TodoReturn lockIcon(int, IconType);
 	TodoReturn rateGame();

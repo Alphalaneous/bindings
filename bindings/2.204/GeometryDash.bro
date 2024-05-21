@@ -4501,7 +4501,7 @@ class GameManager : GManager {
 	TodoReturn generateSecretNumber();
 	TodoReturn getBGTexture(int); //  = win 0x127dc0; actually loadBackground, source: LevelSettingsLayer::selectArtClosed
 	TodoReturn getFontFile(int);
-	TodoReturn getFontTexture(int) = win 0x127c30;
+	const char* getFontTexture(int) = win 0x127c30;
 	bool getGameVariable(char const*) = win 0x128730;
 	TodoReturn getGTexture(int);
 	int getIconRequestID() {
@@ -4536,7 +4536,7 @@ class GameManager : GManager {
 	TodoReturn loadDeathEffect(int) = win 0x127c80;
 	TodoReturn loadDpadFromString(UIButtonConfig&, gd::string);
 	TodoReturn loadDPadLayout(int, bool) = win 0x12af80;
-	TodoReturn loadFont(int) = win 0x127ba0;
+	void loadFont(int) = win 0x127ba0;
 	void loadGround(int) = win 0x1281f0;
 	TodoReturn loadGroundAsync(int);
 	cocos2d::CCTexture2D* loadIcon(int, int, int) = win 0x127440;

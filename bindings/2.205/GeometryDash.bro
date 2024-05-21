@@ -4470,7 +4470,7 @@ class GameManager : GManager {
 	TodoReturn generateSecretNumber();
 	TodoReturn getBGTexture(int);
 	TodoReturn getFontFile(int);
-	TodoReturn getFontTexture(int);
+	const char* getFontTexture(int);
 	bool getGameVariable(char const*) = ios 0x318b58;
 	TodoReturn getGTexture(int);
 	TodoReturn getIconRequestID();
@@ -4501,9 +4501,9 @@ class GameManager : GManager {
 	TodoReturn loadDeathEffect(int);
 	TodoReturn loadDpadFromString(UIButtonConfig&, gd::string);
 	TodoReturn loadDPadLayout(int, bool);
-	TodoReturn loadFont(int);
-	TodoReturn loadGround(int);
-	TodoReturn loadGroundAsync(int);
+	void loadFont(int);
+	void loadGround(int);
+	void loadGroundAsync(int);
 	cocos2d::CCTexture2D* loadIcon(int, int, int);
 	TodoReturn loadIconAsync(int, int, int, cocos2d::CCObject*);
 	TodoReturn loadMiddleground(int);
