@@ -15543,7 +15543,7 @@ class LevelCell : TableViewCell {
 
 	TodoReturn updateToggle();
 	void loadFromLevel(GJGameLevel*) = mac 0x223890, win 0x7D3F0;
-	TodoReturn updateBGColor(int) = win 0x807B0;
+	void updateBGColor(int) = win 0x807B0;
 	TodoReturn updateCellMode(int) = mac 0x22cde0;
 	void loadLocalLevelCell() = mac 0x22d440, win 0x7FE70;
 	void loadCustomLevelCell() = win 0x7D5A0, mac 0x22dcd0;
